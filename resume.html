@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jugaad Singh Sohal</title>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -20,6 +22,7 @@
       padding: 20px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
+      position: relative;
     }
     header, section, footer {
       margin-bottom: 20px;
@@ -40,9 +43,38 @@
       padding-bottom: 5px;
       margin-bottom: 15px;
     }
+    /* Home and Download icons */
+    .home-icon {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 1.5em;
+      color: #0056b4;
+      text-decoration: none;
+    }
+    .download-icon {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5em;
+      color: #0056b4;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .download-icon:hover {
+      color: #004494;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Home Icon Button -->
+  <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a>
+
+  <!-- Download Icon Button -->
+  <a href="Jugaad_CV.pdf" download class="download-icon" title="Download CV">
+    <i class="fas fa-download"></i>
+  </a>
 
   <div class="container">
     <!-- Header -->
@@ -131,50 +163,6 @@
     </section>
 
   </div>
-
-  <script>
-    // Dark mode toggle
-    const toggleContainer = document.createElement('div');
-    toggleContainer.style.position = 'absolute';
-    toggleContainer.style.top = '10px';
-    toggleContainer.style.right = '10px';
-    toggleContainer.style.padding = '8px 12px';
-    toggleContainer.style.cursor = 'pointer';
-    toggleContainer.style.borderRadius = '5px';
-    toggleContainer.style.fontSize = '14px';
-    toggleContainer.innerHTML = '🌙';
-
-    const mainContainer = document.querySelector('.container');
-    mainContainer.style.position = 'relative';
-    mainContainer.prepend(toggleContainer);
-
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-      mainContainer.classList.toggle('dark-mode-container');
-      toggleContainer.innerHTML = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    }
-
-    toggleContainer.addEventListener('click', toggleDarkMode);
-
-    const darkModeStyles = document.createElement('style');
-    darkModeStyles.innerHTML = `
-      .dark-mode {
-        background-color: #1e1e1e;
-        color: #d4d4d4;
-      }
-      .dark-mode a {
-        color: #569cd6;
-      }
-      .dark-mode-container {
-        background-color: #252526;
-        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
-      }
-      h1, h2 {
-        color: #ce9178;
-      }
-    `;
-    document.head.appendChild(darkModeStyles);
-  </script>
 
 </body>
 </html>
