@@ -3,11 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jugaad - Home</title>
+  <title>Jugaad Singh Sohal | Data Scientist</title>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #ffffff;
+      background: linear-gradient(45deg, #0d47a1, #1976d2, #64b5f6, #b39ddb);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+    }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    /* Top Navigation without background */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      padding: 15px 0;
+      font-size: 1.2em;
+    }
+    .top-nav a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .top-nav a:hover {
+      color: #b3e5fc;
+    }
+    .container {
+      text-align: center;
+      max-width: 900px;
+      padding-top: 100px; /* Space below fixed nav */
+      padding-bottom: 60px; /* Space above footer */
+    }
+    h1 {
+      font-size: 3em;
+      font-weight: bold;
+      margin: 0.2em 0;
+    }
+    p {
+      font-size: 1.2em;
+      margin: 1em 0;
+      line-height: 1.6;
+    }
+    /* Footer with Social Links */
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+    }
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.5em;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #b3e5fc;
+    }
+  </style>
 </head>
 <body>
-    This is home page
 
-    <a href="./resume.html">my resume</a>
+  <!-- Top Navigation Links -->
+  <div class="top-nav">
+    <a href="education.html">Education</a>
+    <a href="projects.html">Projects</a>
+    <a href="resume.html">Resume</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Hello, I’m Jugaad Singh Sohal.</h1>
+    <p>I'm a Data Scientist with a strong background in mathematics and machine learning. I bring innovative solutions to data challenges and am passionate about transforming data into meaningful insights.</p>
+  </div>
+
+  <!-- Footer with Social Icons -->
+  <footer>
+    <a href="https://www.linkedin.com/in/jugaadsohal/" target="_blank" title="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/jss-1" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="mailto:jugaadsohal90@gmail.com" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="tel:+9501132451" title="Phone">
+      <i class="fas fa-phone"></i>
+    </a>
+  </footer>
+
 </body>
 </html>
