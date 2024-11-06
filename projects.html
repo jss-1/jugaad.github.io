@@ -6,26 +6,44 @@
   <title>Projects | Jugaad Singh Sohal</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* Page styling */
+    /* Page styling with gradient background */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #0f0f23; /* Dark background */
-      color: #00cc00; /* Green text */
+      background: linear-gradient(135deg, #0d0d22, #1a1a3d);
+      color: #00cc00;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       overflow-y: auto;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
     }
 
-    /* Main container */
+    /* Fade-in animation for page load */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Main container styling */
     .container {
       width: 90%;
       max-width: 800px;
       padding: 20px;
       box-sizing: border-box;
+      animation: slideUp 0.7s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    /* Slide-up animation for content */
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Home Icon */
@@ -36,15 +54,20 @@
       font-size: 1.5em;
       color: #00cc00;
       text-decoration: none;
+      transition: color 0.3s;
+    }
+    .home-icon:hover {
+      color: #00ff00;
     }
 
     /* Main heading */
     h1 {
-      font-size: 2em;
+      font-size: 2.2em;
       color: #00ff00;
       text-align: center;
       margin-bottom: 30px;
       text-transform: uppercase;
+      text-shadow: 1px 1px 5px #003300;
     }
 
     /* Project sections */
@@ -58,13 +81,21 @@
       padding: 20px;
       border: 2px solid #00cc00;
       border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: linear-gradient(135deg, #1a1a3d, #0d0d22);
+    }
+
+    .project-category:hover {
+      transform: scale(1.02);
+      box-shadow: 0px 4px 12px rgba(0, 204, 0, 0.3);
     }
 
     .project-category h2 {
-      font-size: 1.5em;
+      font-size: 1.6em;
       color: #00ff00;
       margin-bottom: 10px;
       text-transform: uppercase;
+      text-shadow: 1px 1px 3px #003300;
     }
 
     /* Project items */
@@ -73,9 +104,14 @@
       cursor: pointer;
       color: #00cc00;
       text-decoration: underline;
+      transition: color 0.3s;
     }
 
-    /* Modal for project description */
+    .project-item:hover {
+      color: #00ff00;
+    }
+
+    /* Modal styling with fade-in and zoom-in effect */
     .modal {
       display: none;
       position: fixed;
@@ -87,6 +123,12 @@
       justify-content: center;
       align-items: center;
       color: #e0e0e0;
+      animation: fadeInModal 0.5s forwards;
+    }
+
+    @keyframes fadeInModal {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     .modal-content {
@@ -97,6 +139,7 @@
       border-radius: 8px;
       border: 2px solid #00cc00;
       text-align: left;
+      box-shadow: 0px 4px 15px rgba(0, 204, 0, 0.3);
     }
 
     .close-modal {
@@ -104,11 +147,21 @@
       font-size: 1.5em;
       cursor: pointer;
       color: #00ff00;
+      transition: color 0.3s;
+    }
+
+    .close-modal:hover {
+      color: #00cc00;
     }
 
     .project-link {
       color: #00ff00;
       text-decoration: underline;
+      transition: color 0.3s;
+    }
+
+    .project-link:hover {
+      color: #00cc00;
     }
   </style>
 </head>
@@ -195,10 +248,7 @@
         
         <br>
         <a href="https://github.com/jss-1/Credit_Card_Fraud_Detection" target="_blank" class="project-link">View Credit Card Fraud Detection on GitHub</a>
-      `,
-      "Project 1": "Description for Project 1.",
-      "Project 2": "Description for Project 2.",
-      "Project 3": "Description for Project 3."
+      `
     };
 
     function openModal(projectName) {
