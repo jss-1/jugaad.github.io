@@ -7,7 +7,9 @@
   <!-- Font Awesome for Home Icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* Advent of Code color scheme */
+    /* Advent of Code-inspired color scheme with gradients and animations */
+
+    /* General Styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -21,15 +23,26 @@
       overflow-y: auto;
     }
 
-    /* Main container */
+    /* Container */
     .container {
       width: 90%;
       max-width: 800px;
       padding: 20px;
       box-sizing: border-box;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards; /* Animation on page load */
     }
 
-    /* Home Icon */
+    /* Keyframes for entry animation */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Home Icon with Hover Effect */
     .home-icon {
       position: fixed;
       top: 20px;
@@ -37,26 +50,40 @@
       font-size: 1.5em;
       color: #00cc00;
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .home-icon:hover {
+      color: #00ff00;
     }
 
-    /* Main heading */
+    /* Main heading with gradient text */
     h1 {
       font-size: 2em;
-      color: #00ff00;
+      background: linear-gradient(90deg, #00ff00, #00cc00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       text-align: center;
       margin-bottom: 30px;
       text-transform: uppercase;
     }
 
-    /* Education sections */
+    /* Education Entry with Gradient Background and Border */
     .education-entry {
       margin-bottom: 30px;
       padding: 20px;
       border: 2px solid #00cc00;
       border-radius: 8px;
+      background: linear-gradient(135deg, #1e1e2e, #2a2a4a);
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
     }
 
-    /* Degree and Institution formatting */
+    /* Scale and shadow effect on hover */
+    .education-entry:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Content sections */
     .degree {
       font-size: 1.5em;
       font-weight: bold;
@@ -68,8 +95,6 @@
       color: #99ff99;
       margin-bottom: 15px;
     }
-
-    /* Content and Short Courses styling */
     .content {
       font-size: 1em;
       color: #d4d4d4;
