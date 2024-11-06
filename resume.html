@@ -13,6 +13,7 @@
       padding: 0;
       color: #334;
       background-color: #f9f9f8;
+      transition: background-color 0.5s, color 0.5s;
     }
     .container {
       width: 95%;
@@ -23,6 +24,7 @@
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
       position: relative;
+      transition: background-color 0.5s;
     }
     header, section, footer {
       margin-bottom: 20px;
@@ -64,6 +66,36 @@
     .download-icon:hover {
       color: #004494;
     }
+    /* Dark mode styles */
+    .dark-mode {
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+    }
+    .dark-mode .container {
+      background-color: #252526;
+    }
+    .dark-mode h1, .dark-mode h2 {
+      color: #ce9178;
+    }
+    .dark-mode a {
+      color: #569cd6;
+    }
+    .dark-mode .section-title {
+      border-color: #569cd6;
+    }
+    /* Toggle button for dark mode */
+    .toggle-button {
+      position: fixed;
+      top: 20px;
+      left: 60px;
+      padding: 8px;
+      font-size: 1.2em;
+      color: #0056b4;
+      cursor: pointer;
+    }
+    .toggle-button:hover {
+      color: #004494;
+    }
   </style>
 </head>
 <body>
@@ -75,6 +107,9 @@
   <a href="Jugaad_CV.pdf" download class="download-icon" title="Download CV">
     <i class="fas fa-download"></i>
   </a>
+
+  <!-- Dark Mode Toggle Button -->
+  <span class="toggle-button" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</span>
 
   <div class="container">
     <!-- Header -->
@@ -164,5 +199,11 @@
 
   </div>
 
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
