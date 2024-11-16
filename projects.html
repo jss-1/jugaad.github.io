@@ -21,12 +21,12 @@
       opacity: 0;
       animation: fadeIn 1s forwards;
     }
-
+  
     /* Fade-in animation for page load */
     @keyframes fadeIn {
       to { opacity: 1; }
     }
-
+  
     /* Main container styling */
     .container {
       width: 90%;
@@ -37,7 +37,7 @@
       opacity: 0;
       transform: translateY(20px);
     }
-
+  
     /* Slide-up animation for content */
     @keyframes slideUp {
       to {
@@ -45,7 +45,7 @@
         transform: translateY(0);
       }
     }
-
+  
     /* Home Icon */
     .home-icon {
       position: fixed;
@@ -59,7 +59,7 @@
     .home-icon:hover {
       color: #00ff00;
     }
-
+  
     /* Main heading */
     h1 {
       font-size: 2.2em;
@@ -69,14 +69,14 @@
       text-transform: uppercase;
       text-shadow: 1px 1px 5px #003300;
     }
-
+  
     /* Project sections */
     .projects-section {
       display: flex;
       flex-direction: column;
       gap: 30px;
     }
-
+  
     .project-category {
       padding: 20px;
       border: 2px solid #00cc00;
@@ -84,12 +84,12 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       background: linear-gradient(135deg, #1a1a3d, #0d0d22);
     }
-
+  
     .project-category:hover {
       transform: scale(1.02);
       box-shadow: 0px 4px 12px rgba(0, 204, 0, 0.3);
     }
-
+  
     .project-category h2 {
       font-size: 1.6em;
       color: #00ff00;
@@ -97,7 +97,7 @@
       text-transform: uppercase;
       text-shadow: 1px 1px 3px #003300;
     }
-
+  
     /* Project items */
     .project-item {
       margin: 10px 0;
@@ -106,11 +106,11 @@
       text-decoration: underline;
       transition: color 0.3s;
     }
-
+  
     .project-item:hover {
       color: #00ff00;
     }
-
+  
     /* Modal styling with fade-in and zoom-in effect */
     .modal {
       display: none;
@@ -124,13 +124,14 @@
       align-items: center;
       color: #e0e0e0;
       animation: fadeInModal 0.5s forwards;
+      padding: 20px; /* Added padding for better accessibility */
     }
-
+  
     @keyframes fadeInModal {
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
     }
-
+  
     .modal-content {
       background: #1e1e1e;
       padding: 20px;
@@ -140,8 +141,9 @@
       border: 2px solid #00cc00;
       text-align: left;
       box-shadow: 0px 4px 15px rgba(0, 204, 0, 0.3);
+      overflow-y: auto; /* Allow scrolling for overflow content */
     }
-
+  
     .close-modal {
       float: right;
       font-size: 1.5em;
@@ -149,23 +151,23 @@
       color: #00ff00;
       transition: color 0.3s;
     }
-
+  
     .close-modal:hover {
       color: #00cc00;
     }
-
+  
     .project-link {
       color: #00ff00;
       text-decoration: underline;
       transition: color 0.3s;
     }
-
+  
     .project-link:hover {
       color: #00cc00;
     }
   </style>
-
-    <style>
+  
+  <style>
     @media (max-width: 768px) {
       body {
         font-size: 90%;
@@ -174,15 +176,17 @@
         width: 100%;
         padding: 10px;
       }
-      .top-nav, footer {
-        flex-direction: column;
-        gap: 10px;
+      .modal-content {
+        width: 90%;
+        max-width: none;
+        padding: 15px;
       }
-      .top-nav a, footer a {
-        font-size: 1em;
+      .modal {
+        align-items: flex-start;
       }
     }
-    </style>
+  </style>
+  
     
 </head>
 <body>
@@ -208,9 +212,12 @@
       <div class="project-category">
         <h2>Completed</h2>
         <div class="project-item" onclick="openModal('Credit Card Fraud Detection')">Credit Card Fraud Detection</div>
+        <div class="project-item" onclick="openModal('Loan Approval Model')">Loan Approval Model</div>
       </div>
     </div>
   </div>
+
+  
 
   <!-- Modal for project description -->
   <div class="modal" id="projectModal">
@@ -268,18 +275,45 @@
         
         <br>
         <a href="https://github.com/jss-1/Credit_Card_Fraud_Detection" target="_blank" class="project-link">View Credit Card Fraud Detection on GitHub</a>
-      `
+      `,
+      "Loan Approval Model":`
+        <strong>Completed Project:</strong> This project leverages machine learning algorithms to predict loan approval statuses based on applicant data.<br><br>
+        
+        <strong>Features:</strong>
+        <ul>
+          <li>Preprocessing applicant data to handle missing values and encode categorical variables.</li>
+          <li>Training models such as Logistic Regression, Random Forests, and Decision Trees.</li>
+          <li>Evaluating model performance with metrics like accuracy and F1-score.</li>
+          <li>Providing predictions for new applicants.</li>
+        </ul>
+        
+        <br>
+        <a href="https://github.com/jss-1/Loan_Approval_Model" target="_blank" class="project-link">View Loan Approval Model on GitHub</a>
+        `
     };
+
+    const modal = document.getElementById('projectModal');
+    const modalContent = document.querySelector('.modal-content');
 
     function openModal(projectName) {
       document.getElementById('modalTitle').innerText = projectName;
       document.getElementById('modalDescription').innerHTML = projectDetails[projectName];
-      document.getElementById('projectModal').style.display = 'flex';
+      modal.style.display = 'flex';
     }
 
     function closeModal() {
-      document.getElementById('projectModal').style.display = 'none';
+      modal.style.display = 'none';
     }
+
+    // Close modal when clicking outside the modal content
+    modal.addEventListener('click', function (event) {
+      if (!modalContent.contains(event.target)) {
+        closeModal();
+      }
+    });
+
+    // Close modal when clicking the "X" button
+    document.querySelector('.close-modal').addEventListener('click', closeModal);
   </script>
 </body>
 </html>
