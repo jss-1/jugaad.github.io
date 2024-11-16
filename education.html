@@ -4,18 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Education | Jugaad Singh Sohal</title>
-  <!-- Font Awesome for Home Icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* Advent of Code-inspired color scheme with gradients and animations */
-
     /* General Styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #0f0f23; /* Dark background */
-      color: #00cc00; /* Green text */
+      background-color: #0f0f23;
+      color: #00cc00;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,26 +20,7 @@
       overflow-y: auto;
     }
 
-    /* Container */
-    .container {
-      width: 95%;
-      max-width: 1360px;
-      padding: 20px;
-      box-sizing: border-box;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s ease forwards; /* Animation on page load */
-    }
-
-    /* Keyframes for entry animation */
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Home Icon with Hover Effect */
+    /* Home Icon */
     .home-icon {
       position: fixed;
       top: 20px;
@@ -50,154 +28,87 @@
       font-size: 1.5em;
       color: #00cc00;
       text-decoration: none;
-      transition: color 0.3s ease;
+      z-index: 1000; /* Ensure it is on top */
+      padding: 10px; /* Better tap area */
     }
+
     .home-icon:hover {
       color: #00ff00;
     }
 
-    /* Main heading with gradient text */
+    /* Main heading */
     h1 {
       font-size: 2em;
-      background: linear-gradient(90deg, #00ff00, #00cc00);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       text-align: center;
       margin-bottom: 30px;
       text-transform: uppercase;
+      background: linear-gradient(90deg, #00ff00, #00cc00);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    /* Education Entry with Gradient Background and Border */
+    /* Container and entries */
+    .container {
+      width: 95%;
+      max-width: 1360px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
     .education-entry {
       margin-bottom: 30px;
       padding: 20px;
       border: 2px solid #00cc00;
       border-radius: 8px;
       background: linear-gradient(135deg, #1e1e2e, #2a2a4a);
-      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
     }
 
-    /* Scale and shadow effect on hover */
-    .education-entry:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Content sections */
     .degree {
       font-size: 1.5em;
       font-weight: bold;
       color: #00ff00;
-      margin-bottom: 5px;
     }
+
     .institution {
       font-size: 1.2em;
       color: #99ff99;
-      margin-bottom: 15px;
     }
-    .content {
-      font-size: 1em;
-      color: #d4d4d4;
-      margin-bottom: 10px;
-    }
-    .short-courses {
-      font-size: 0.9em;
-      color: #c0c0c0;
-    }
+
     .short-courses ul {
-      list-style-type: disc;
       padding-left: 20px;
     }
-    .course-title {
-      font-weight: bold;
-      color: #00cc00;
-    }
-  </style>
 
-    <style>
     @media (max-width: 768px) {
       body {
         font-size: 90%;
       }
       .container {
-        width: 100%;
         padding: 10px;
       }
-      .top-nav, footer {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .top-nav a, footer a {
-        font-size: 1em;
+      .home-icon {
+        font-size: 1.2em;
+        padding: 8px;
       }
     }
-    </style>
-    
+  </style>
 </head>
 <body>
-
-  <!-- Home Icon Button -->
   <a href="index.html" class="home-icon" title="Back to Home">
     <i class="fas fa-home"></i>
   </a>
-
-  <!-- Main container for education content -->
   <div class="container">
-    <!-- Education Heading -->
     <h1>Education</h1>
-
-    <!-- M.Sc. Data Science Section -->
     <div class="education-entry">
       <div class="degree">M.Sc. Data Science</div>
       <div class="institution">Chennai Mathematical Institute</div>
-      <div class="content">A comprehensive program covering advanced topics in mathematics, probability and statistics, data structures and algorithms, visualization, machine learning, and data engineering.</div>
-      
-      <!-- Short Courses for M.Sc. Data Science -->
-      <div class="short-courses">
-        <ul>
-          <li><span class="course-title">Mathematical Methods:</span> Single-variable and multi-variable analysis, essential for data modeling and optimization.</li>
-          <li><span class="course-title">Linear Algebra:</span> Matrix operations and eigenvalues for machine learning and data manipulation.</li>
-          <li><span class="course-title">Probability and Statistics with R:</span> Statistical analysis and hypothesis testing for model evaluation.</li>
-          <li><span class="course-title">Visualization:</span> Data storytelling using tools like Tableau.</li>
-          <li><span class="course-title">Programming and Data Structures:</span> Core Python programming skills for data handling and algorithms.</li>
-          <li><span class="course-title">Algorithms:</span> Sorting, searching, and graph algorithms for large datasets.</li>
-          <li><span class="course-title">RDBMS and SQL:</span> Database management critical for handling big data.</li>
-          <li><span class="course-title">Distributed Computing and Big Data:</span> Distributed systems and MapReduce for big data analytics.</li>
-          <li><span class="course-title">Data Mining and Machine Learning:</span> Clustering, classification, and data pattern extraction techniques.</li>
-        </ul>
-      </div>
+      <p>Program covering advanced topics in mathematics, machine learning, and data engineering.</p>
     </div>
-
-    <!-- B.Math (Hons.) Section -->
     <div class="education-entry">
       <div class="degree">B.Math (Hons.)</div>
       <div class="institution">Indian Statistical Institute</div>
-      <div class="content">An intensive program focused on mathematics and foundational topics in algebra, analysis, differential equations, and more, providing a solid basis for advanced studies in data science.</div>
-      
-      <!-- Short Courses for B.Math (Hons.) -->
-      <div class="short-courses">
-        <ul>
-          <li><span class="course-title">Algebra I (Groups):</span> Covers fundamental group theory, essential for understanding symmetries in data structures and cryptography.</li>
-          <li><span class="course-title">Algebra II (Linear Algebra):</span> Focuses on vector spaces, transformations, and eigenvalues, providing the mathematical basis for data science techniques such as PCA and dimensionality reduction.</li>
-          <li><span class="course-title">Algebra III (Rings and Modules):</span> Explores advanced algebraic structures that support fields like coding theory and cryptographic algorithms.</li>
-          <li><span class="course-title">Algebra IV (Field Theory):</span> Essential for understanding finite fields, algebraic closures, and Galois theory, foundational in coding and cryptography.</li>
-          <li><span class="course-title">Analysis I (Calculus of One Variable):</span> Builds the calculus foundation, focusing on sequences, limits, and series, crucial for data continuity and convergence concepts in machine learning.</li>
-          <li><span class="course-title">Analysis II (Metric Spaces and Multivariate Calculus):</span> Key for optimization techniques and understanding metric spaces, useful in machine learning algorithms.</li>
-          <li><span class="course-title">Analysis III (Vector Calculus):</span> Vector calculus concepts like divergence, gradient, and curl are used in physics-based models and computational simulations.</li>
-          <li><span class="course-title">Analysis IV (Function Spaces):</span> Covers advanced topics like Fourier series and function spaces, relevant for signal processing and time-series analysis.</li>
-          <li><span class="course-title">Differential Equations:</span> Fundamental for modeling real-world phenomena and widely applicable in fields like economics, biology, and physics.</li>
-          <li><span class="course-title">Complex Analysis:</span> Provides techniques for analyzing complex functions, which are applied in signal processing and fluid dynamics.</li>
-          <li><span class="course-title">Topology:</span> Introduces topological concepts important in advanced geometry and network theory, applicable in data clustering.</li>
-          <li><span class="course-title">Differential Geometry:</span> Key for understanding curves, surfaces, and their properties, relevant in computer graphics and physics simulations.</li>
-          <li><span class="course-title">Graph Theory:</span> Fundamental for network analysis, crucial in social network analysis, communication, and data structuring.</li>
-          <li><span class="course-title">Optimization:</span> Essential for solving linear programming and game theory problems, widely used in data science for optimizing machine learning models.</li>
-          <li><span class="course-title">Probability I & II:</span> Foundation in probability theory, essential for all aspects of data science, including inferential statistics and probabilistic modeling.</li>
-          <li><span class="course-title">Statistics I, II, III:</span> Covers estimation, hypothesis testing, regression, and ANOVA, which form the backbone of statistical analysis in data science.</li>
-          <li><span class="course-title">Computer Science I (Programming):</span> Provides basic programming skills, crucial for implementing algorithms and managing data.</li>
-          <li><span class="course-title">Computer Science II (Numerical Methods):</span> Focuses on numerical computations, essential for accurate data analysis and computational simulations.</li>
-        </ul>
+      <p>Focused on algebra, analysis, differential equations, and foundational mathematics.</p>
     </div>
   </div>
-
 </body>
 </html>

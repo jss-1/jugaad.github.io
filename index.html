@@ -26,7 +26,7 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    /* Top Navigation without background */
+    /* Top Navigation */
     .top-nav {
       position: fixed;
       top: 0;
@@ -79,27 +79,19 @@
     footer a:hover {
       color: #b3e5fc;
     }
-  </style>
 
-    <style>
+    /* Mobile Responsive Styles */
     @media (max-width: 768px) {
-      body {
-        font-size: 90%;
+      .top-nav {
+        flex-direction: row; /* Keep navigation horizontal */
+        justify-content: space-evenly; /* Space items evenly */
       }
-      .container {
-        width: 100%;
-        padding: 10px;
-      }
-      .top-nav, footer {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .top-nav a, footer a {
+      .top-nav a {
         font-size: 1em;
+        padding: 10px 5px; /* Add padding for better tap experience */
       }
     }
-    </style>
-    
+  </style>
 </head>
 <body>
 
